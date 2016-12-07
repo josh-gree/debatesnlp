@@ -1,3 +1,6 @@
 data/raw/debate.txt filter=lfs diff=lfs merge=lfs -text
 data/raw/debate3.txt filter=lfs diff=lfs merge=lfs -text
 notebooks/debate.json filter=lfs diff=lfs merge=lfs -text
+data/raw/debate_* filter=lfs diff=lfs merge=lfs -text
+data/raw/debate_091016.txt filter=lfs diff=lfs merge=lfs -text
+data/raw/debate_191016.txt filter=lfs diff=lfs merge=lfs -text
