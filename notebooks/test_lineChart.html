@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+    </head>
+    <body>
+        
+    <div id="linechart"><svg style="height:450px;"></svg></div>
+
+
+    <script>
+
+
+
+            data_linechart=[{"color": "black", "values": [{"y": 0, "x": 0}, {"y": 0, "x": 1}, {"y": 1, "x": 2}, {"y": 1, "x": 3}, {"y": 0, "x": 4}, {"y": 0, "x": 5}, {"y": 0, "x": 6}, {"y": 0, "x": 7}, {"y": 1, "x": 8}, {"y": 0, "x": 9}, {"y": 0, "x": 10}, {"y": 4, "x": 11}, {"y": 3, "x": 12}, {"y": 3, "x": 13}, {"y": 5, "x": 14}, {"y": 7, "x": 15}, {"y": 5, "x": 16}, {"y": 3, "x": 17}, {"y": 16, "x": 18}, {"y": 6, "x": 19}, {"y": 9, "x": 20}, {"y": 15, "x": 21}, {"y": 4, "x": 22}, {"y": 12, "x": 23}], "key": "sine", "yAxis": "1"}, {"color": "red", "values": [{"y": 9, "x": 0}, {"y": 8, "x": 1}, {"y": 11, "x": 2}, {"y": 8, "x": 3}, {"y": 3, "x": 4}, {"y": 7, "x": 5}, {"y": 10, "x": 6}, {"y": 8, "x": 7}, {"y": 6, "x": 8}, {"y": 6, "x": 9}, {"y": 9, "x": 10}, {"y": 6, "x": 11}, {"y": 5, "x": 12}, {"y": 4, "x": 13}, {"y": 3, "x": 14}, {"y": 10, "x": 15}, {"y": 0, "x": 16}, {"y": 6, "x": 17}, {"y": 3, "x": 18}, {"y": 1, "x": 19}, {"y": 0, "x": 20}, {"y": 0, "x": 21}, {"y": 0, "x": 22}, {"y": 1, "x": 23}], "key": "cose", "yAxis": "1"}];
+
+
+        nv.addGraph(function() {
+        var chart = nv.models.lineChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_linechart;
+
+
+
+                chart.xAxis
+                .tickFormat(function(d) { return get_am_pm(parseInt(d)); });
+            chart.yAxis
+                .tickFormat(d3.format(',.02f'));
+
+
+        function get_am_pm(d){
+            if (d > 12) {
+                d = d - 12; return (String(d) + 'PM');
+            }
+            else {
+                return (String(d) + 'AM');
+            }
+        };
+
+          chart.showLegend(true);
+
+
+    
+
+        
+
+
+
+            d3.select('#linechart svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('height', 450)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,5 @@
+,index,dates,place_names,tweets,long,lat,clean_tweets,polarity_cl,polarity
+0,0,2016-10-20 02:31:58.211,,"RT @liamstack: Trump: ""Can I just respond?""
+Wallace: ""Well, no.""",,, trump can i just respond wallace well no,0,2
+1,1,2016-10-20 02:31:58.683,,RT @saraschaefer1: Every time it's Hillary's turn to speak she's like https://t.co/58DvautQVV,,, every time its hillarys turn to speak shes like,2,2
+2,2,2016-10-20 02:31:58.490,,RT @CBSNews: FACT CHECK: Donald Trump on heroin in the US. More details here: https://t.co/BJw96qvqLM #debatenight https://t.co/WUYwNCwSto,,, fact check donald trump on heroin in the us more details here,2,2
